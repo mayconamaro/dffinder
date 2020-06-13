@@ -51,8 +51,8 @@ jobs:
         shell: bash
         run: |
           mkdir package
-          dir=$(stack path --dist-dir)/build/
-          [[ -e "$dir/" ]] && cp "$dir/" package/dffinder
+          dir=$(stack path --dist-dir)/build/dffinder
+          [[ -e "$dir/dffinder" ]] && cp "$dir/dffinder" package/dffinder
           [[ -e "$dir/dffinder.exe" ]] && cp "$dir/dffinder.exe" package/dffinder.exe
       - name: Upload artifact
         uses: actions/upload-artifact@v1
