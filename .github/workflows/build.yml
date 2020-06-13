@@ -47,15 +47,15 @@ jobs:
       - name: Build dffinder
         run: stack build
 
-      - name: Package dffinder
-        shell: bash
-        run: |
-          mkdir package
-          dir=$(stack path --dist-dir)/build/dffinder
-          [[ -e "$dir/dffinder" ]] && cp "$dir/dffinder" package/dffinder
-          [[ -e "$dir/dffinder.exe" ]] && cp "$dir/dffinder.exe" package/dffinder.exe
-      - name: Upload artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: dffinder-${{ runner.os }}
-          path: package
+      # - name: Package dffinder
+      #   shell: bash
+      #   run: |
+      #     mkdir package
+      #     dir=$(stack path --dist-dir)/build/dffinder
+      #     [[ -e "$dir/dffinder" ]] && cp "$dir/dffinder" package/dffinder
+      #     [[ -e "$dir/dffinder.exe" ]] && cp "$dir/dffinder.exe" package/dffinder.exe
+      # - name: Upload artifact
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: dffinder-${{ runner.os }}
+      #     path: package
