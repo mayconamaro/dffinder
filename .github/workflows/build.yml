@@ -47,13 +47,13 @@ jobs:
       - name: Build dffinder
         run: stack build
 
-      - name: Package generator
+      - name: Package dffinder
         shell: bash
         run: |
           mkdir package
           dir=$(stack path --dist-dir)/build/
-          [[ -e "$dir/" ]] && cp "$dir/" ../package/dffinder
-          [[ -e "$dir/dffinder.exe" ]] && cp "$dir/dffinder.exe" ../package/dffinder.exe
+          [[ -e "$dir/" ]] && cp "$dir/" package/dffinder
+          [[ -e "$dir/dffinder.exe" ]] && cp "$dir/dffinder.exe" package/dffinder.exe
       - name: Upload artifact
         uses: actions/upload-artifact@v1
         with:
