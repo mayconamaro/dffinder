@@ -1,5 +1,7 @@
 # DFFinder - Duplicate File Finder
 
+![build](https://github.com/mayconamaro/dffinder/workflows/build/badge.svg?branch=master&event=push)
+
 This is a simple application that scans an entire folder's tree structure (all files in all subfolders) for duplicate files. The files are compared in terms of content, so duplicate files with different names are still found.
 
 
