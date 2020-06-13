@@ -8,7 +8,7 @@ This is a simple application that scans an entire folder's tree structure (all f
 
 When I test the program in different platforms I will publish the binaries somewhere and update this *readme*. Until there you can build your own version easily:
 
-1. Get [Haskell Stack]([Install/upgrade - The Haskell Tool Stack](https://docs.haskellstack.org/en/stable/install_and_upgrade/)) 
+1. Get [Haskell Stack](https://docs.haskellstack.org/en/stable/install_and_upgrade/) 
 
 2. Clone this repository on your machine
 
