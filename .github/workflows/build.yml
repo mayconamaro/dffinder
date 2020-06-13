@@ -10,7 +10,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-10.15, windows-2019]
+        os: [ubuntu-latest, macos-10.15]
+        # os: [ubuntu-latest, macos-10.15, windows-2019]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -30,19 +31,19 @@ jobs:
           path: ~/.stack
           key: ${{ runner.os }}-store-${{ hashFiles('stack.yaml.lock') }}-${{ hashFiles('dffinder.cabal') }}
 
-      - name: Cache dependencies (Windows)
-        uses: actions/cache@v1
-        if: matrix.os == 'windows-2019'
-        with:
-          path: 'C:\Users\runneradmin\AppData\Roaming\stack'
-          key: ${{ runner.os }}-store-${{ hashFiles('stack.yaml.lock') }}-${{ hashFiles('dffinder.cabal') }}
+      # - name: Cache dependencies (Windows)
+      #   uses: actions/cache@v1
+      #   if: matrix.os == 'windows-2019'
+      #   with:
+      #     path: 'C:\Users\runneradmin\AppData\Roaming\stack'
+      #     key: ${{ runner.os }}-store-${{ hashFiles('stack.yaml.lock') }}-${{ hashFiles('dffinder.cabal') }}
 
-      - name: Cache GHC (Windows)
-        uses: actions/cache@v1
-        if: matrix.os == 'windows-2019'
-        with:
-          path: 'C:\Users\runneradmin\AppData\Local\Programs\stack'
-          key: ghc-${{ hashFiles('stack.yaml.lock') }}
+      # - name: Cache GHC (Windows)
+      #   uses: actions/cache@v1
+      #   if: matrix.os == 'windows-2019'
+      #   with:
+      #     path: 'C:\Users\runneradmin\AppData\Local\Programs\stack'
+      #     key: ghc-${{ hashFiles('stack.yaml.lock') }}
 
       - name: Build dffinder
         run: stack build
