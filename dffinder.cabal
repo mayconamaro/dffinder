@@ -1,0 +1,80 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 392b7d6415c6a83ee1becd242387dd506f89c7d430a632775c1e5ff4cccd2b24
+
+name:           dffinder
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/dffinder#readme>
+homepage:       https://github.com/mayconamaro/dffinder#readme
+bug-reports:    https://github.com/mayconamaro/dffinder/issues
+author:         Maycon Amaro
+maintainer:     maycon.amaro@decom.ufop.br
+copyright:      2020 Maycon Amaro
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/mayconamaro/dffinder
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_dffinder
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , cond >=0.4
+    , directory >=1.3
+    , extra
+    , filepath >=1.4
+    , pureMD5 >=2.1
+  default-language: Haskell2010
+
+executable dffinder
+  main-is: Main.hs
+  other-modules:
+      Paths_dffinder
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , cond >=0.4
+    , dffinder
+    , directory >=1.3
+    , extra
+    , filepath >=1.4
+    , pureMD5 >=2.1
+  default-language: Haskell2010
+
+test-suite dffinder-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_dffinder
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , cond >=0.4
+    , dffinder
+    , directory >=1.3
+    , extra
+    , filepath >=1.4
+    , pureMD5 >=2.1
+  default-language: Haskell2010
