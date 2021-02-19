@@ -2,7 +2,7 @@
 
 ![build](https://github.com/mayconamaro/dffinder/workflows/build/badge.svg?branch=master&event=push)
 
-This is a simple application that scans an entire folder's tree structure (all files in all subfolders) for duplicate files. The files are compared in terms of content, so duplicate files with different names are still found.
+This is a simple application that scans an entire folder’s tree structure (all files in all subfolders) for duplicate files. The files are compared in terms of content, so duplicate files with different names are still found.
 
 
 
@@ -12,7 +12,7 @@ When I test the program in different platforms I will publish the binaries somew
 
 1. Get [Haskell Stack](https://docs.haskellstack.org/en/stable/install_and_upgrade/) 
 
-2. Clone this repository on your machine
+2. Clone this repository
 
 3. Open a terminal/prompt on the directory
 
@@ -24,10 +24,10 @@ When I test the program in different platforms I will publish the binaries somew
 
 
 
-## What's the idea?
+## What’s the idea?
 
-I did not do anything new here, we compare the files' checksum in order to find the ones that generated the same hash number. Yeah, I know that different files can generate one same hash number (which in fact is needed by security), but chances are very low.
+I did not do anything new here, I compare the files’ checksum in order to find the ones that generated the same hash number. I know that different files can generate one same hash number (which in fact is needed by security), but chances are very low.
 
 ## Contribute
 
-I'll will gladly check all pull requests and accept contributions to this project =D
+I’ll will gladly check all pull requests and accept contributions to this project =D
